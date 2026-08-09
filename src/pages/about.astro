@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import { sitePath } from '../utils/paths';
+---
+<BaseLayout title="About" description="Discover the mission, values, and structure behind the Daybreak guild.">
+  <section class="page-hero"><span class="eyebrow">Our guild</span><h1>Built for the<br /><em>horizon.</em></h1><p>Daybreak brings ambitious players together under one purpose: progress that elevates everyone.</p></section>
+  <section class="section split-copy"><span class="chapter">01 / Who we are</span><div><h2>A greater purpose.</h2><p>We are a cross-platform community in Foundation: Galactic Frontier, welcoming pilots who value cooperation as much as achievement. We believe the best guilds are built deliberately—with clear expectations, generous knowledge-sharing, and room for every member to contribute.</p></div></section>
+  <section class="section values-section"><SectionTitle eyebrow="The Daybreak code" title="What guides us" /><div class="value-grid"><article><b>01</b><h3>Show up together</h3><p>We communicate, coordinate, and follow through. Reliability turns a roster into a fleet.</p></article><article><b>02</b><h3>Share the light</h3><p>Knowledge creates momentum. We help others improve and celebrate collective wins.</p></article><article><b>03</b><h3>Respect the person</h3><p>Competition never comes before character. Every member deserves dignity and a voice.</p></article><article><b>04</b><h3>Reach beyond</h3><p>We stay curious, adapt quickly, and meet every new frontier with intent.</p></article></div></section>
+  <section class="recruit-cta compact"><span class="eyebrow">Your chapter awaits</span><h2>Rise with Daybreak.</h2><a class="button primary" href={sitePath('/join/')}>Explore recruitment</a></section>
+</BaseLayout>

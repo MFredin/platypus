@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsCard from '../../components/NewsCard.astro';
+---
+<BaseLayout title="News" description="Announcements, field reports, and recruitment updates from Daybreak.">
+  <section class="page-hero news-hero"><span class="eyebrow">Guild transmissions</span><h1>From the<br /><em>horizon.</em></h1><p>Official announcements, fleet reports, and signals from across the Daybreak network.</p></section>
+  <section class="section archive"><div class="archive-head"><span class="chapter">Latest signals</span><p>All transmissions / 003</p></div><div class="news-grid archive-grid"><NewsCard featured category="Announcement" date="Aug 09, 2026" title="A new dawn begins" copy="The Daybreak network is online. Discover the vision behind our guild and the future we intend to build together." /><NewsCard category="Recruitment" date="Aug 07, 2026" title="Pioneers wanted" copy="Our signal is open to thoughtful, active players ready to make their mark on the frontier." /><NewsCard category="Field report" date="Aug 02, 2026" title="Preparing for launch" copy="Command shares our first priorities: a capable fleet, a strong economy, and a culture worth protecting." /></div></section>
+</BaseLayout>

@@ -1,0 +1,17 @@
+{
+  "name": "daybreak-guild",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build --site https://mfredin.github.io/platypus --base /platypus",
+    "preview": "astro preview",
+    "check": "astro check --root ."
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.13.5",
+    "typescript": "^5.9.2"
+  }
+}
