@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build --site https://mfredin.github.io/platypus --base /platypus",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "check": "astro check --root ."
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
