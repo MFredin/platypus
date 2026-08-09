@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+<section>
+  <div class="container">
+    <article class="post">
+      <div class="section__head" style="text-align:left; margin-bottom:1.5rem;">
+        <div class="eyebrow">Daybreak News</div>
+        <h1>{{ title }}</h1>
+        <p class="post__meta">{{ date | readableDate }}</p>
+      </div>
+      <div class="post__body">
+        {{ content | safe }}
+      </div>
+      <p><a href="{{ '/news/' | url }}">&larr; Back to News</a></p>
+    </article>
+  </div>
+</section>
