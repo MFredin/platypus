@@ -1,0 +1,13 @@
+---
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<svg class:list={["logo-mark", { compact }]} viewBox="0 0 120 120" aria-hidden="true">
+  <circle cx="60" cy="62" r="50" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".65" />
+  <path d="M20 62h80M60 23v77M35 54l8-15 4 12 6-27 7 25 7-17 7 19 8-11 4 14" fill="none" stroke="currentColor" stroke-width="2" />
+  <path d="M37 62a23 23 0 0 1 46 0Z" fill="currentColor" opacity=".9" />
+  <path d="M25 67h70M31 72h58M40 77h40M50 82h20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".65" />
+  <path d="M57 53h6v43h-6z" fill="var(--ink, #071015)" />
+  <path d="M59 46h2v48h-2z" fill="currentColor" />
+  <circle cx="60" cy="8" r="2" fill="currentColor" />
+</svg>
