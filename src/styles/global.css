@@ -930,6 +930,7 @@ button:focus-visible {
   .chapter {
     writing-mode: initial !important;
     display: block;
+    position: static !important;
     margin-bottom: 1.5rem;
   }
   .page-hero {

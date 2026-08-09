@@ -3,8 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Logo from '../components/Logo.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import NewsCard from '../components/NewsCard.astro';
-import { newsItems } from '../data/news';
 import { sitePath } from '../utils/paths';
+import { getNewsCards } from '../utils/news';
+
+const newsItems = await getNewsCards();
 ---
 
 <BaseLayout

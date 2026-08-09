@@ -1,21 +1,13 @@
 ---
-import { sitePath } from '../utils/paths';
 interface Props {
   category: string;
   date: string;
   title: string;
   copy: string;
-  href?: string;
+  href: string;
   featured?: boolean;
 }
-const {
-  category,
-  date,
-  title,
-  copy,
-  href = sitePath('news'),
-  featured = false,
-} = Astro.props;
+const { category, date, title, copy, href, featured = false } = Astro.props;
 ---
 
 <article class:list={['news-card', { featured }]}>

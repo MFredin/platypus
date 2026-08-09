@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsCard from '../../components/NewsCard.astro';
-import { newsItems } from '../../data/news';
+import { getNewsCards } from '../../utils/news';
+
+const newsItems = await getNewsCards();
 ---
 
 <BaseLayout
