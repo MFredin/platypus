@@ -1,15 +1,16 @@
 ---
 import Logo from './Logo.astro';
+import { sitePath } from '../utils/paths';
 const path = Astro.url.pathname;
-const base = import.meta.env.BASE_URL;
+const home = sitePath('/');
 const links = [
-  { href: base, label: 'Home' },
-  { href: `${base}news/`, label: 'News' },
-  { href: `${base}about/`, label: 'About' },
-  { href: `${base}join/`, label: 'Join' },
+  { href: home, label: 'Home' },
+  { href: sitePath('news'), label: 'News' },
+  { href: sitePath('about'), label: 'About' },
+  { href: sitePath('join'), label: 'Join' },
 ];
 const active = (href: string) =>
-  href === base ? path === base : path.startsWith(href);
+  href === home ? path === home : path.startsWith(href);
 ---
 
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -27,7 +28,7 @@ const active = (href: string) =>
         ))
       }
     </div>
-    <a class="brand" href={base} aria-label="Daybreak home">
+    <a class="brand" href={home} aria-label="Daybreak home">
       <Logo compact />
       <span>DAYBREAK</span>
     </a>
@@ -52,7 +53,7 @@ const active = (href: string) =>
     >
       <span></span><span></span><span></span><b class="sr-only">Toggle menu</b>
     </button>
-    <a class="mobile-join" href={`${base}join/`}>Join</a>
+    <a class="mobile-join" href={sitePath('join')}>Join</a>
   </nav>
   <div class="mobile-menu" id="mobile-menu" hidden>
     {

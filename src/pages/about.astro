@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
-const base = import.meta.env.BASE_URL;
+import { sitePath } from '../utils/paths';
 ---
 
 <BaseLayout
@@ -56,6 +56,8 @@ const base = import.meta.env.BASE_URL;
   <section class="recruit-cta compact">
     <span class="eyebrow">Your chapter awaits</span><h2>
       Rise with Daybreak.
-    </h2><a class="button primary" href={`${base}join/`}>Explore recruitment</a>
+    </h2><a class="button primary" href={sitePath('join')}
+      >Explore recruitment</a
+    >
   </section>
 </BaseLayout>
