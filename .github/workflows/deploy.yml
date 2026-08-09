@@ -1,5 +1,4 @@
-name: Deploy Daybreak (Node 24)
-run-name: Daybreak Pages · Node 24 · ${{ github.sha }}
+name: Deploy Daybreak
 
 on:
   push:
@@ -19,23 +18,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # v5 actions run on the Node 24 action runtime. Older major versions
-      # emit Node 20 deprecation warnings on current GitHub-hosted runners.
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
           cache: npm
-          cache-dependency-path: package-lock.json
-      - name: Verify workflow revision
-        run: |
-          node --version
-          test -f package-lock.json
-          git rev-parse HEAD
-          cat astro.config.mjs
-      - run: npm install --no-audit --no-fund
+      - run: npm install
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v4
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          BASE_PATH: ${{ vars.BASE_PATH }}
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
   deploy:

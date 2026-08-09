@@ -24,15 +24,10 @@ can be hosted on GitHub Pages.
 ## GitHub Pages
 
 The deployment workflow runs automatically after a push to `main` or `work`.
-The site is published at `https://mfredin.github.io/platypus`, with `/platypus`
-configured as Astro's base path. Astro's optional `site` setting is deliberately
-omitted because the project does not currently use an integration that requires
-an absolute canonical origin. This also removes the URL validation path that can
-otherwise reject stale or malformed CI configuration.
+Configure the optional repository variables `SITE_URL` and `BASE_PATH` when the
+site is hosted below a repository subpath.
 
-The repository includes a dependency lockfile so `setup-node` can safely enable
-its npm cache. The workflow is named **Deploy Daybreak (Node 24)** in the Actions
-tab. If a run still reports `actions/setup-node@v4` or Node 22, it is a rerun of
-an older commit: start a new run from the current `main` branch rather than using
-**Re-run jobs**, because GitHub reruns use the workflow stored in the original
-commit.
+The workflow deliberately uses `npm install` without the `setup-node` dependency
+cache because the project does not yet have a committed lockfile. Once a
+`package-lock.json` is generated and committed, the workflow can switch to
+`npm ci` and re-enable `cache: npm` for reproducible, cached installs.
