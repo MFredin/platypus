@@ -1,9 +1,21 @@
 ---
 import Logo from './Logo.astro';
-import { sitePath } from '../utils/paths';
+const base = import.meta.env.BASE_URL;
 ---
+
 <footer class="site-footer">
-  <div class="footer-brand"><Logo compact /><div><strong>DAYBREAK</strong><span>Together at dawn. Limitless beyond.</span></div></div>
-  <nav aria-label="Footer navigation"><a href={sitePath('/news/')}>News</a><a href={sitePath('/about/')}>About</a><a href={sitePath('/join/')}>Recruitment</a></nav>
-  <p class="fine-print">Daybreak is an independent player guild for Foundation: Galactic Frontier and is not affiliated with its developers or publishers.</p>
+  <div class="footer-brand">
+    <Logo compact /><div>
+      <strong>DAYBREAK</strong><span>Together at dawn. Limitless beyond.</span>
+    </div>
+  </div>
+  <nav aria-label="Footer navigation">
+    <a href={`${base}news/`}>News</a><a href={`${base}about/`}>About</a><a
+      href={`${base}join/`}>Recruitment</a
+    >
+  </nav>
+  <p class="fine-print">
+    Daybreak is an independent player guild for Foundation: Galactic Frontier
+    and is not affiliated with its developers or publishers.
+  </p>
 </footer>

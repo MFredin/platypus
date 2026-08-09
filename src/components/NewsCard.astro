@@ -1,9 +1,23 @@
 ---
-import { sitePath } from '../utils/paths';
-interface Props { category: string; date: string; title: string; copy: string; href?: string; featured?: boolean; }
-const { category, date, title, copy, href = sitePath('/news/'), featured = false } = Astro.props;
+interface Props {
+  category: string;
+  date: string;
+  title: string;
+  copy: string;
+  href?: string;
+  featured?: boolean;
+}
+const {
+  category,
+  date,
+  title,
+  copy,
+  href = `${import.meta.env.BASE_URL}news/`,
+  featured = false,
+} = Astro.props;
 ---
-<article class:list={["news-card", { featured }]}> 
+
+<article class:list={['news-card', { featured }]}>
   <div class="card-top"><span>{category}</span><time>{date}</time></div>
   <h3>{title}</h3><p>{copy}</p>
   <a href={href}>Read transmission <span aria-hidden="true">↗</span></a>

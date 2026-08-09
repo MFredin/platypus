@@ -1,11 +1,16 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { sitePath } from '../utils/paths';
 import '../styles/global.css';
-interface Props { title: string; description: string; }
+interface Props {
+  title: string;
+  description: string;
+}
 const { title, description } = Astro.props;
+const pageTitle = `${title} | Daybreak`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,8 +18,27 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#061017" />
-    <link rel="icon" href={sitePath('/favicon.svg').replace(/\/$/, '')} type="image/svg+xml" />
-    <title>{title} | Daybreak</title>
+    <link
+      rel="icon"
+      href={`${import.meta.env.BASE_URL}favicon.svg`}
+      type="image/svg+xml"
+    />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@300;400;500;600&display=swap"
+    />
+    <title>{pageTitle}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body>
     <Header />
