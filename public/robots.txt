@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mfredin.github.io/platypus/sitemap-index.xml
